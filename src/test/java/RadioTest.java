@@ -20,9 +20,9 @@ public class RadioTest {
     public void shouldSetNumber1() {
 
         Radio rad = new Radio();
-        rad.setCurrentNumber(0);
+        rad.setCurrentNumber(5);
 
-        int expected = 0;
+        int expected = 5;
 
         int actual = rad.getCurrentNumber();
 
@@ -35,7 +35,7 @@ public class RadioTest {
         Radio rad = new Radio();
         rad.setCurrentNumber(15);
 
-        int expected = 0;
+        int expected = 9;
 
         int actual = rad.getCurrentNumber();
 
@@ -47,7 +47,7 @@ public class RadioTest {
 
     public void shouldIncreaseNumber() {
         Radio rad = new Radio();
-        rad.setCurrentNumber(10);
+        rad.setCurrentNumber(15);
 
         rad.increaseNumber();
 
@@ -77,7 +77,7 @@ public class RadioTest {
 
         rad.increaseNumber();
 
-        int expected = 1;
+        int expected = 2;
         int actual = rad.getCurrentNumber();
 
         Assertions.assertEquals(expected, actual);
@@ -149,7 +149,7 @@ public class RadioTest {
     public void shouldDecreaseVolume() {
 
         Radio rad = new Radio();
-        rad.setCurrentVolume(0);
+        rad.setCurrentVolume(-1);
 
         rad.decreaseVolume();
 

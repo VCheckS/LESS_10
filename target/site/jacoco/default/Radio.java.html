@@ -6,36 +6,36 @@
 <span class="fc" id="L6">        return currentNumber;</span>
     }
 
-
-
     public void increaseNumber() {
-<span class="fc" id="L12">        int target = currentNumber + 1;</span>
-<span class="fc" id="L13">        currentNumber = target;</span>
-<span class="pc bpc" id="L14" title="1 of 2 branches missed.">        if (currentNumber &gt; 9) {</span>
-<span class="nc" id="L15">            currentNumber = 1;</span>
+<span class="fc" id="L10">        int target = currentNumber + 1;</span>
+<span class="fc" id="L11">        currentNumber = target;</span>
+<span class="fc bfc" id="L12" title="All 2 branches covered.">        if (currentNumber &gt; 9) {</span>
+<span class="fc" id="L13">            currentNumber = 1;</span>
         }
-<span class="fc" id="L17">    }</span>
+<span class="fc" id="L15">    }</span>
 
     public void decreaseNumber() {
 
-<span class="pc bpc" id="L21" title="1 of 2 branches missed.">        if (currentNumber &lt; 9) {</span>
-<span class="fc" id="L22">            currentNumber = currentNumber -1;</span>
+<span class="fc bfc" id="L19" title="All 2 branches covered.">        if (currentNumber &lt; 9) {</span>
+<span class="fc" id="L20">            currentNumber = currentNumber - 1;</span>
         }
-<span class="pc bpc" id="L24" title="1 of 2 branches missed.">        if (currentNumber &lt; 1) {</span>
-<span class="fc" id="L25">            currentNumber = 9;</span>
+<span class="fc bfc" id="L22" title="All 2 branches covered.">        if (currentNumber &lt; 1) {</span>
+<span class="fc" id="L23">            currentNumber = 9;</span>
         }
 
 
-<span class="fc" id="L29">    }</span>
+<span class="fc" id="L27">    }</span>
+
     public void setCurrentNumber(int newCurrentNumber) {
-<span class="fc bfc" id="L31" title="All 2 branches covered.">        if (newCurrentNumber &lt; 1) {</span>
-<span class="fc" id="L32">            return;</span>
+<span class="fc bfc" id="L30" title="All 2 branches covered.">        if (newCurrentNumber &lt; 1) {</span>
+<span class="fc" id="L31">            newCurrentNumber =1;</span>
         }
-<span class="fc bfc" id="L34" title="All 2 branches covered.">        if (newCurrentNumber &gt; 9) {</span>
-<span class="fc" id="L35">            return;</span>
+<span class="fc bfc" id="L33" title="All 2 branches covered.">        if (newCurrentNumber &gt; 9) {</span>
+<span class="fc" id="L34">            newCurrentNumber = 9;</span>
         }
-<span class="fc" id="L37">        currentNumber = newCurrentNumber;</span>
-<span class="fc" id="L38">    }</span>
+<span class="fc" id="L36">        currentNumber = newCurrentNumber;</span>
+<span class="fc" id="L37">    }</span>
+
     public int currentVolume;
 
     public int getCurrentVolume() {
@@ -59,7 +59,7 @@
 <span class="pc bpc" id="L59" title="1 of 2 branches missed.">        if (currentVolume &lt;= 10) {</span>
 <span class="fc" id="L60">            currentVolume = currentVolume - 1;</span>
         }
-<span class="pc bpc" id="L62" title="1 of 2 branches missed.">        if (currentVolume &lt;= 0) {</span>
+<span class="pc bpc" id="L62" title="1 of 2 branches missed.">        if (currentVolume &lt; 1) {</span>
 <span class="fc" id="L63">            currentVolume = 0;</span>
         }
 <span class="fc" id="L65">    }</span>
