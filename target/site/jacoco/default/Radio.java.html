@@ -44,24 +44,30 @@
 
     public void setCurrentVolume(int newCurrentVolume) {
 <span class="fc" id="L46">        currentVolume = newCurrentVolume;</span>
-<span class="fc" id="L47">    }</span>
+<span class="fc bfc" id="L47" title="All 2 branches covered.">        if (currentVolume &gt; 10) {</span>
+<span class="fc" id="L48">            currentVolume = 10;</span>
+        }
+<span class="fc bfc" id="L50" title="All 2 branches covered.">        if (currentVolume &lt; 0) {</span>
+<span class="fc" id="L51">            currentVolume = 0;</span>
+        }
+<span class="fc" id="L53">    }</span>
 
     public void increaseVolume() {
-<span class="fc bfc" id="L50" title="All 2 branches covered.">        if (currentVolume &lt; 10) {</span>
-<span class="fc" id="L51">            currentVolume = currentVolume + 1;</span>
+<span class="fc bfc" id="L56" title="All 2 branches covered.">        if (currentVolume &lt; 10) {</span>
+<span class="fc" id="L57">            currentVolume = currentVolume + 1;</span>
         }
-<span class="fc bfc" id="L53" title="All 2 branches covered.">        if (currentVolume &gt; 10) {</span>
-<span class="fc" id="L54">            currentVolume = 10;</span>
+<span class="fc bfc" id="L59" title="All 2 branches covered.">        if (currentVolume &gt; 9) {</span>
+<span class="fc" id="L60">            currentVolume = 10;</span>
         }
-<span class="fc" id="L56">    }</span>
+<span class="fc" id="L62">    }</span>
 
     public void decreaseVolume() {
-<span class="pc bpc" id="L59" title="1 of 2 branches missed.">        if (currentVolume &lt;= 10) {</span>
-<span class="fc" id="L60">            currentVolume = currentVolume - 1;</span>
+<span class="pc bpc" id="L65" title="1 of 2 branches missed.">        if (currentVolume &lt; 11) {</span>
+<span class="fc" id="L66">            currentVolume = currentVolume - 1;</span>
         }
-<span class="pc bpc" id="L62" title="1 of 2 branches missed.">        if (currentVolume &lt; 1) {</span>
-<span class="fc" id="L63">            currentVolume = 0;</span>
+<span class="fc bfc" id="L68" title="All 2 branches covered.">        if (currentVolume &lt; 1) {</span>
+<span class="fc" id="L69">            currentVolume = 0;</span>
         }
-<span class="fc" id="L65">    }</span>
+<span class="fc" id="L71">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
