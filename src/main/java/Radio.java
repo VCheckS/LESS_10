@@ -1,5 +1,3 @@
-
-
 public class Radio {
 
     public int currentNumber;
