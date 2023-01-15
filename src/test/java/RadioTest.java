@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 public class RadioTest {
     @Test
 
-    public void shouldSetStation() {
+    public void shouldSetNumber() {
 
         Radio rad = new Radio();
         rad.setCurrentNumber(5);
