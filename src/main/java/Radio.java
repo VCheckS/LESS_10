@@ -6,8 +6,29 @@ public class Radio {
         return currentNumber;
     }
 
+
+
+    public void increaseNumber() {
+        int target = currentNumber + 1;
+        currentNumber = target;
+        if (currentNumber > 9) {
+            currentNumber = 1;
+        }
+    }
+
+    public void decreaseNumber() {
+
+        if (currentNumber < 9) {
+            currentNumber = currentNumber -1;
+        }
+        if (currentNumber < 1) {
+            currentNumber = 9;
+        }
+
+
+    }
     public void setCurrentNumber(int newCurrentNumber) {
-        if (newCurrentNumber < 0) {
+        if (newCurrentNumber < 1) {
             return;
         }
         if (newCurrentNumber > 9) {
@@ -15,29 +36,6 @@ public class Radio {
         }
         currentNumber = newCurrentNumber;
     }
-
-    public void increaseNumber() {
-        int target = currentNumber + 1;
-        currentNumber = target;
-        if (currentNumber < 9) {
-            currentNumber = currentNumber + 1;
-        }
-        if (currentNumber > 9) {
-            currentNumber = 1;
-        }
-    }
-
-    public void decreaseNumber() {
-        int target2 = currentNumber - 1;
-        setCurrentNumber(target2);
-        if (currentNumber < 9) {
-            currentNumber = target2;
-        }
-        if (currentNumber <= 0) {
-            currentNumber = 9;
-        }
-    }
-
     public int currentVolume;
 
     public int getCurrentVolume() {
@@ -45,12 +43,6 @@ public class Radio {
     }
 
     public void setCurrentVolume(int newCurrentVolume) {
-        if (newCurrentVolume > 10) {
-            return;
-        }
-        if (newCurrentVolume < 0) {
-            return;
-        }
         currentVolume = newCurrentVolume;
     }
 
