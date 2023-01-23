@@ -1,72 +1,70 @@
 public class Radio {
 
-    public int currentNumber;
+    private int currentNumber;
+    private int currentVolume;
+    private int maxStation;
 
-    public int getCurrentNumber() {
-        return currentNumber;
+
+    public Radio() {
+        maxStation = 9;
     }
 
     public void increaseNumber() {
-        int target = currentNumber + 1;
-        currentNumber = target;
-        if (currentNumber > 9) {
-            currentNumber = 1;
+        if (currentNumber != maxStation) {
+            currentNumber++;
+        } else {
+            currentNumber = 0;
         }
     }
 
     public void decreaseNumber() {
 
-        if (currentNumber < 9) {
-            currentNumber = currentNumber - 1;
-        }
-        if (currentNumber < 1) {
-            currentNumber = 9;
-        }
-
-
-    }
-
-    public void setCurrentNumber(int newCurrentNumber) {
-        if (newCurrentNumber < 1) {
-            newCurrentNumber =1;
-        }
-        if (newCurrentNumber > 9) {
-            newCurrentNumber = 9;
-        }
-        currentNumber = newCurrentNumber;
-    }
-
-    public int currentVolume;
-
-    public int getCurrentVolume() {
-        return currentVolume;
-    }
-
-    public void setCurrentVolume(int newCurrentVolume) {
-        currentVolume = newCurrentVolume;
-        if (currentVolume > 10) {
-            currentVolume = 10;
-        }
-        if (currentVolume < 0) {
-            currentVolume = 0;
-        }
+        if (currentNumber != 0) {
+            currentNumber--;
+        } else currentNumber = maxStation;
     }
 
     public void increaseVolume() {
-        if (currentVolume < 10) {
-            currentVolume = currentVolume + 1;
-        }
-        if (currentVolume > 9) {
-            currentVolume = 10;
-        }
+        if (currentVolume != 10) {
+            currentVolume++;
+        } else currentVolume = 10;
     }
 
     public void decreaseVolume() {
-        if (currentVolume < 11) {
-            currentVolume = currentVolume - 1;
-        }
-        if (currentVolume < 1) {
-            currentVolume = 0;
-        }
+        if (currentVolume != 0) {
+            currentVolume--;
+        } else currentVolume = 0;
     }
+
+    public int getCurrentVolume() {
+
+        return currentVolume;
+    }
+
+    public void setCurrentVolume(int currentVolume) {
+        if (currentVolume < 0) {
+            return;
+        }
+        if (currentVolume > 10) {
+            return;
+        }
+        this.currentVolume = currentVolume;
+    }
+
+    public int getCurrentNumber() {
+
+        return currentNumber;
+    }
+
+    public void setCurrentNumber(int currentNumber) {
+        if (currentNumber < 0) {
+            return;
+        }
+        if (currentNumber > maxStation) {
+            return;
+        }
+        this.currentNumber = currentNumber;
+    }
+
+
 }
