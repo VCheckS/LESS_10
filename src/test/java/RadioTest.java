@@ -155,12 +155,12 @@ public class RadioTest {
     public void shouldIncreaseVolume() {
 
         Radio rad = new Radio();
-        rad.setCurrentVolume(10);
+        rad.setCurrentVolume(100);
 
         rad.increaseVolume();
 
 
-        int expected = 10;
+        int expected = 100;
 
         int actual = rad.getCurrentVolume();
 
@@ -173,12 +173,12 @@ public class RadioTest {
     public void shouldIncreaseVolume1() {
 
         Radio rad = new Radio();
-        rad.setCurrentVolume(8);
+        rad.setCurrentVolume(99);
 
         rad.increaseVolume();
 
 
-        int expected = 9;
+        int expected = 100;
 
         int actual = rad.getCurrentVolume();
 
@@ -207,7 +207,7 @@ public class RadioTest {
     public void shouldDecreaseVolume1() {
 
         Radio rad = new Radio();
-        rad.setCurrentVolume(11);
+        rad.setCurrentVolume(101);
 
         rad.decreaseVolume();
 
@@ -223,12 +223,12 @@ public class RadioTest {
     public void shouldDecreaseVolume2() {
 
         Radio rad = new Radio();
-        rad.setCurrentVolume(10);
+        rad.setCurrentVolume(100);
 
         rad.decreaseVolume();
 
 
-        int expected = 9;
+        int expected = 99;
 
         int actual = rad.getCurrentVolume();
 
@@ -257,7 +257,7 @@ public class RadioTest {
     public void shouldDecreaseVolume4() {
 
         Radio rad = new Radio();
-        rad.setCurrentVolume(12);
+        rad.setCurrentVolume(1);
 
         rad.decreaseVolume();
 
@@ -273,9 +273,9 @@ public class RadioTest {
     public void shouldSetVolume1() {
 
         Radio rad = new Radio();
-        rad.setCurrentVolume(11);
+        rad.setCurrentVolume(100);
 
-        int expected = 0;
+        int expected = 100;
 
         int actual = rad.getCurrentVolume();
 
@@ -295,4 +295,20 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
 
     }
+    @Test
+    public void test() {
+
+
+        Radio rad = new Radio(  15);
+        rad.setCurrentNumber(14);
+
+        int expected = 14;
+
+        int actual = rad.getCurrentNumber();
+
+        Assertions.assertEquals(expected, actual);
+
+    }
 }
+
+

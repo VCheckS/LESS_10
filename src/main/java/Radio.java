@@ -1,39 +1,49 @@
 public class Radio {
-
-    private int currentNumber;
     private int currentVolume;
     private int maxStation;
-
+    private int minStation;
+    private int currentStation;
 
     public Radio() {
         maxStation = 9;
     }
 
+    public Radio(int stationsCount) {
+        maxStation = stationsCount - 1;
+    }
+
+
     public void increaseNumber() {
-        if (currentNumber != maxStation) {
-            currentNumber++;
+        if (currentStation != maxStation) {
+            currentStation++;
         } else {
-            currentNumber = 0;
+            currentStation = minStation;
         }
     }
 
     public void decreaseNumber() {
 
-        if (currentNumber != 0) {
-            currentNumber--;
-        } else currentNumber = maxStation;
+        if (currentStation != minStation) {
+            currentStation--;
+        } else {
+            currentStation = maxStation;
+        }
     }
 
     public void increaseVolume() {
-        if (currentVolume != 10) {
+        if (currentVolume != 100) {
             currentVolume++;
-        } else currentVolume = 10;
+        } else {
+            currentVolume = 100;
+        }
     }
 
     public void decreaseVolume() {
         if (currentVolume != 0) {
             currentVolume--;
-        } else currentVolume = 0;
+        } else {
+            currentVolume = 0;
+        }
     }
 
     public int getCurrentVolume() {
@@ -45,7 +55,7 @@ public class Radio {
         if (currentVolume < 0) {
             return;
         }
-        if (currentVolume > 10) {
+        if (currentVolume > 100) {
             return;
         }
         this.currentVolume = currentVolume;
@@ -53,17 +63,17 @@ public class Radio {
 
     public int getCurrentNumber() {
 
-        return currentNumber;
+        return currentStation;
     }
 
-    public void setCurrentNumber(int currentNumber) {
-        if (currentNumber < 0) {
+    public void setCurrentNumber(int currentStation) {
+        if (currentStation < minStation) {
             return;
         }
-        if (currentNumber > maxStation) {
+        if (currentStation > maxStation) {
             return;
         }
-        this.currentNumber = currentNumber;
+        this.currentStation = currentStation;
     }
 
 
